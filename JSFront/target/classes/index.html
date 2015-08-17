@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="d3-timeline.js"></script>
+<script type="text/javascript" src="gantchart.js"></script>
+
+<style type="text/css">
+.axis path, .axis line {
+	fill: none;
+	stroke: black;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	font-family: sans-serif;
+	font-size: 10px;
+}
+
+.timeline-label {
+	font-family: sans-serif;
+	font-size: 12px;
+}
+
+#timeline2 .axis {
+	transform: translate(0px, 30px);
+	-ms-transform: translate(0px, 30px); /* IE 9 */
+	-webkit-transform: translate(0px, 30px); /* Safari and Chrome */
+	-o-transform: translate(0px, 30px); /* Opera */
+	-moz-transform: translate(0px, 30px); /* Firefox */
+}
+
+.coloredDiv {
+	height: 20px;
+	width: 20px;
+	float: left;
+}
+</style>
+<script type="text/javascript">
+  var width = 1000;
+  var address="http://localhost/JSServer/webresources/myresource";
+  var divId="timeline3";
+  $(document).ready(function(){
+	  	console.log("kliknalem ");
+		$('#getFeed').click(function(){
+			renderchart(divId,address)})});
+  
+  </script>
+</head>
+<body>
+	<div id="timeline3"></div>
+
+	<input type="button" id="getFeed" value=" TEST" />
+	<div id="feedDiv">
+	</div>
+
+</body>
+</html>

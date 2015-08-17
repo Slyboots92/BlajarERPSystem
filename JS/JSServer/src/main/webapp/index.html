@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript">
+
+		$(document).ready(function(){
+			$('#getFeed').click(function(){
+				$.getJSON('http://localhost:8080/JSServer/webresources/myresource',function(data){
+					console.log("data "+data);
+					if(data){
+							$.each(data,function(key,value){
+								console.log("key "+key +" value "+value)
+									//$('#list').append(
+										//	"<li>Student id is"+value.studentId+"</li>");
+								});
+						}
+				});
+		});
+		
+
+		});
+
+
+
+
+        </script>
+    </head>
+    	<body>
+    	
+    		<h1>Hello World!</h1>
+    		<h2> test</h2>
+    		<input type ="button" id="getFeed" value =" TEST" />
+    		<div id ="feedDiv">
+    		<ul id=list>
+    		
+    		</ul>
+    		
+    		</div>
+    		
+    	</body>
+</html>
